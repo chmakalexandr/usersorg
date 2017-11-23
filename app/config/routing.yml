@@ -1,0 +1,6 @@
+intex_org:
+    resource: "@IntexOrgBundle/Resources/config/routing.yml"
+    prefix:    /{_locale}
+    requirements:
+          _locale:  %available_langs%
+

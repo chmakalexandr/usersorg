@@ -1,0 +1,43 @@
+{% extends '::base.html.twig' %}
+
+{% block namepage %}
+    <h3>
+        {% trans %} Main {% endtrans %}
+    </h3>
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-xs-6 col-md-3">
+            <a href="{{ path('intex_org_users') }}" class="thumbnail">
+                <i class="fa fa-users fa-5x" aria-hidden="true"></i>
+                <p>{% trans %}Show Users{% endtrans %}</p>
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <a href="{{ path('intex_org_companies') }}" class="thumbnail">
+                <i class="fa fa-university fa-5x" aria-hidden="true"></i>
+                <p>{% trans %}Show Organizations{% endtrans %}</p>
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <a href="{{ path('intex_org_user_upload')}}" class="thumbnail">
+                <i class="fa fa-upload fa-5x" aria-hidden="true"></i>
+                <p>{% trans %}Upload users{% endtrans %}</p>
+            </a>
+        </div>
+    </div>
+
+    {% for error_message in app.session.flashBag.get('error') %}
+        <div class="alert alert-danger" role="alert">
+            {{ error_message }}
+        </div>
+    {% endfor %}
+
+    {% for success_message in app.session.flashBag.get('success') %}
+        <div class="alert alert-success" role="alert">
+            {{ success_message }}
+        </div>
+    {% endfor %}
+{% endblock %}
+

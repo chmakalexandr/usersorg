@@ -1,0 +1,202 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Alex
+ * Date: 30.10.2017
+ * Time: 10:56
+ */
+
+namespace Intex\OrgBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity(repositoryClass="Intex\OrgBundle\Entity\Repository\UserRepository")
+ *
+ * @ORM\Table(name="user")
+ */
+class User
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $firstname;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $lastname;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $patronymic;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    protected $bithday;
+
+    /**
+     * @ORM\Column(type="bigint")
+     */
+    protected $inn;
+
+    /**
+     * @ORM\Column(type="bigint")
+     */
+    protected $snils;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Company", inversedBy="users")
+     * @ORM\JoinColumn(name="company_id", referencedColumnName="id")
+     */
+    protected $company;
+
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * @param mixed $firstname
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
+
+    /**
+     * @param mixed $lastname
+     */
+    public function setLastname($lastname)
+    {
+        $this->lastname = $lastname;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPatronymic()
+    {
+        return $this->patronymic;
+    }
+
+    /**
+     * @param mixed $patronymic
+     */
+    public function setPatronymic($patronymic)
+    {
+        $this->patronymic = $patronymic;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBithday()
+    {
+        return $this->bithday;
+    }
+
+    /**
+     * @param mixed $bithday
+     */
+    public function setBithday($bithday)
+    {
+        $this->bithday = $bithday;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getInn()
+    {
+        return $this->inn;
+    }
+
+    /**
+     * @param mixed $inn
+     */
+    public function setInn($inn)
+    {
+        $this->inn = $inn;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSnils()
+    {
+        return $this->snils;
+    }
+
+    /**
+     * @param mixed $snils
+     */
+    public function setSnils($snils)
+    {
+        $this->snils = $snils;
+    }
+
+
+
+
+    /**
+     * Set company
+     *
+     * @param \Intex\OrgBundle\Entity\Company $company
+     *
+     * @return User
+     */
+    public function setCompany(\Intex\OrgBundle\Entity\Company $company = null)
+    {
+        $this->company = $company;
+
+        return $this;
+    }
+
+    /**
+     * Get company
+     *
+     * @return \Intex\OrgBundle\Entity\Company
+     */
+    public function getCompany()
+    {
+        return $this->company;
+    }
+}

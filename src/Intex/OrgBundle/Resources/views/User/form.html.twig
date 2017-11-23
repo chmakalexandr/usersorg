@@ -1,0 +1,31 @@
+{% extends 'IntexOrgBundle::layout.html.twig' %}
+{% block firstjavascripts %}
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/moment.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
+{% endblock %}
+
+{% block namepage %}
+    <h3>
+        {% trans %} Add user to organization {% endtrans %}
+        <a href="{{ path('intex_org_company_show', {'companyId': company.id}) }}">{{ company.name }}</a>
+    </h3>
+{% endblock %}
+
+{% block body %}
+    {{ form_start(form, { 'action': path('intex_org_user_create',{'companyId':company.id}), 'method': 'POST', 'attr': {'class': 'userform'} }) }}
+    {{ form_widget(form) }}
+    <p>
+        <input type="submit" value="{% trans %}Submit{% endtrans %}" class="btn btn-default">
+    </p>
+
+    <script type="text/javascript">
+        $("#intex_orgbundle_usertype_bithday").datepicker({format: "yyyy-mm-dd", startView: 1});
+    </script>
+{% endblock %}
+
+
+
+
+
+

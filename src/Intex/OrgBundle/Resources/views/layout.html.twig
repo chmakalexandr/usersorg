@@ -1,0 +1,16 @@
+{% extends '::base.html.twig' %}
+
+{% block languages %}
+    <span><a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge(app.request.query.all|merge({'_locale': 'ru' }))) }}">RU</a></span>&nbsp|
+    <span><a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge(app.request.query.all|merge({'_locale': 'en' }))) }}">EN</a></span>
+{% endblock %}
+
+{% block sidebar %}
+    <aside class="sidebar">
+        <ul class="nav nav-pills nav-stacked">
+            <li><a href="{{ path('intex_org_users') }}">{% trans %}Show Users{% endtrans %}</a></li>
+            <li><a href="{{ path('intex_org_companies') }}">{% trans %}Show Organizations{% endtrans %}</a></li>
+            <li><a href="{{ path('intex_org_user_upload')}}">{% trans %}Upload users{% endtrans %}</a></li>
+        </ul>
+    </aside>
+{% endblock %}

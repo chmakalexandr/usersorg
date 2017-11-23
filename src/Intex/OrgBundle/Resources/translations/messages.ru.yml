@@ -1,0 +1,50 @@
+Main: Главная
+Upload users from a XML file: Загрузить пользователей из XML-файла
+List of all users: Список всех пользователей
+User information: Информация о пользователе
+Add user to organization: Добавить пользователя в организацию
+Organization Users: Пользователи организации
+Organization: Организация
+Organizations: Организации
+Organization's Information: Информация об организации
+The file contains data about users who are already present in the database. Upload canceled.: В файле есть данные о пользователях, которые уже присутствуют в БД.
+Users successfully loaded: Пользователи успешно загружены
+User was be added!: Пользователь был успешно добавлен
+Name organization: Название организации
+There are no company: Нет такой компании
+Show company users: Показать пользователей организации
+Add user in company: Добавить пользователя в организацию
+Last Name: Фамилия
+First Name: Имя
+Middle Name: Отчество
+Show Organizations: Показать организации
+Users & Organizations: Пользователи и организации
+Show Users: Показать пользователей
+Upload users: Загрузить пользователей
+Upload Document: Загрузить документ
+Add user: Добавить пользователя
+Submit: Отправить
+PSRN: ОГРН
+ARCTMU: ОКТМО
+Bithday(YYYY-MM-DD): День рождения (ГГГГ-ММ-ДД)
+Bithday: День рождения
+ITN: ИНН
+INILA: СНИЛС
+ITN (12 digits): ИНН (12 цифр)
+INILA (11 digits): СНИЛС (11 цифр)
+Load XML file: Загрузить XML-файл
+Show company info: Показать информацию об организации
+Show user info: Паказать информацию о пользователе
+Wrong file: Не правильный файл
+Action: Действие
+Actions: Действия
+There are no users: Нет пользователей
+There are no companies: Нет организаций
+Unnable add users in Db. Check XML file : Невозможно добавить пользователей в БД. Проверьте XML-файл.
+Access forbidden: Доступ запрещен
+Return to the home page: Вернитесь на домашнюю страницу
+The requested page was not found. Check for typos in the URL or: Запрашиваемая страница не найдена. Проверьте наличие опечаток в URL-адресе или
+An error occurred: Произошла ошибка
+An exception occurred: Произошло исключение
+Choose organization: Выбрать организацию
+All uploadable users are present in DB : Все загружаемые пользователи присутсвуют в БД.

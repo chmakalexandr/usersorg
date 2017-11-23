@@ -1,0 +1,10 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+    {{ exception.message }} ({{ status_code }} {{ status_text }})
+{% endblock %}
+
+{% block body %}
+    <h3>{{ exception.message }}</h3>
+    <p><a href="{{ path('intex_org_homepage') }}">Вернитесь на домашнюю сраницу</a></p>
+{% endblock %}

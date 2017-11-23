@@ -1,0 +1,135 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Alex
+ * Date: 30.10.2017
+ * Time: 10:57
+ */
+
+namespace Intex\OrgBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Intex\OrgBundle\Entity\User;
+
+/**
+ * @ORM\Entity(repositoryClass="Intex\OrgBundle\Entity\Repository\CompanyRepository")
+ * @ORM\Table(name="company")
+ */
+class Company
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $name;
+
+    /**
+     * @ORM\Column(type="bigint")
+     */
+    protected $ogrn;
+
+    /**
+     * @ORM\Column(type="bigint")
+     */
+    protected $oktmo;
+
+    /**
+     * @ORM\OneToMany(targetEntity="User", mappedBy="company")
+     */
+    protected $users;
+
+    public function __construct()
+    {
+        $this->users = new ArrayCollection();
+    }
+
+    public function addUser(User $user)
+    {
+        $this->users[] = $user;
+    }
+
+    public function getUsers()
+    {
+        return $this->users;
+    }
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param mixed $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOgrn()
+    {
+        return $this->ogrn;
+    }
+
+    /**
+     * @param mixed $ogrn
+     */
+    public function setOgrn($ogrn)
+    {
+        $this->ogrn = $ogrn;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOktmo()
+    {
+        return $this->oktmo;
+    }
+
+    /**
+     * @param mixed $oktmo
+     */
+    public function setOktmo($oktmo)
+    {
+        $this->oktmo = $oktmo;
+    }
+
+
+    /**
+     * Remove user
+     *
+     * @param \Intex\OrgBundle\Entity\User $user
+     */
+    public function removeUser(\Intex\OrgBundle\Entity\User $user)
+    {
+        $this->users->removeElement($user);
+    }
+}

@@ -1,0 +1,17 @@
+{% extends 'IntexOrgBundle:User:index.html.twig' %}
+
+{% block namepage %}
+    <h3>
+        {% trans %}Organization Users{% endtrans %}
+        <a href="{{ path('intex_org_company_show', {'companyId': company.id}) }}">{{ company.name }}</a>
+    </h3>
+{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    {% for success_message in app.session.flashBag.get('success') %}
+        <div class="alert alert-success" role="alert">
+            {{ success_message }}
+        </div>
+    {% endfor %}
+{% endblock %}

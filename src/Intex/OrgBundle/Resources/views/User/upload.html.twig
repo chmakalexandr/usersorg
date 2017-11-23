@@ -1,0 +1,32 @@
+{% extends 'IntexOrgBundle::layout.html.twig' %}
+{% block namepage %}
+    <h3>
+        {% trans %} Upload users from a XML file {% endtrans %}
+    </h3>
+{% endblock %}
+
+{% block body %}
+
+    {{ form_start(form, { 'action': path('intex_org_user_load'), 'method': 'POST', 'attr': {'class': 'loadform'} }) }}
+    {{ form_widget(form) }}
+    <input type="submit" value="{% trans %}Upload Document{% endtrans %}" class="btn btn-default" id="up_submit" />
+
+    {% for error_message in app.session.flashBag.get('error') %}
+        <div class="alert alert-danger" role="alert">
+            {{ error_message }}
+        </div>
+    {% endfor %}
+
+    {% for error_message in app.session.flashBag.get('warning') %}
+        <div class="alert alert-warning">
+            {{ error_message }}
+        </div>
+    {% endfor %}
+
+    {% for success_message in app.session.flashBag.get('success') %}
+        <div class="alert alert-success" role="alert">
+            {{ success_message }}
+        </div>
+    {% endfor %}
+
+{% endblock %}

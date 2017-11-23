@@ -1,0 +1,42 @@
+{% extends 'IntexOrgBundle::layout.html.twig' %}
+
+{% block namepage %}
+    <h3>
+        {% trans %} User information {% endtrans %}
+    </h3>
+{% endblock %}
+
+{% block body %}
+    <div class="show_user">
+        <table class="table">
+            <tr>
+                <td class="name-col">{% trans %}Last Name{% endtrans %}</td>
+                <td>{{ user.lastname }}</td>
+            </tr>
+            <tr>
+                <td class="name-col">{% trans %}First Name{% endtrans %}</td>
+                <td>{{ user.firstname }}</td>
+            </tr>
+            <tr>
+                <td class="name-col">{% trans %}Middle Name{% endtrans %}</td>
+                <td>{{ user.middlename }}</td>
+            </tr>
+            <tr>
+                <td class="name-col">{% trans %}Bithday{% endtrans %}</td>
+                <td>{{ user.bithday|date("m/d/Y")}}</td>
+            </tr>
+            <tr>
+                <td class="name-col">{% trans %}ITN{% endtrans %}</td>
+                <td>{{ user.inn}}</td>
+            </tr>
+            <tr>
+                <td class="name-col">{% trans %}INILA{% endtrans %}</td>
+                <td>{{ user.snils}}</td>
+            </tr>
+            <tr>
+                <td class="name-col">{% trans %}Organization{% endtrans %}</td>
+                <td><a href="{{ path('intex_org_company_show', { 'companyId': user.company.id }) }}">{{ user.company }} </a></td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}

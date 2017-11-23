@@ -1,0 +1,32 @@
+{% extends 'IntexOrgBundle::layout.html.twig' %}
+
+{% block namepage %}
+    <h3>
+        {% trans %} Organization's Information:{% endtrans %} <a href="{{  path('intex_org_company_show', { 'companyId': company.id })}}">{{ company.name }}</a>
+    </h3>
+{% endblock %}
+
+{% block body %}
+    <div class="show_company">
+        <table class="table">
+            <tr>
+                <td class="name-col" width="50%">{% trans %} Name organization {% endtrans %}:</td>
+                <td>{{ company.name }}</td>
+            </tr>
+            <tr>
+                <td class="name-col">ОГРН:</td>
+                <td>{{ company.ogrn }}</td>
+            </tr>
+            <tr>
+                <td class="name-col">ОКТМО:</td>
+                <td>{{ company.oktmo }} </td>
+            </tr>
+        </table>
+        <div class="row">
+            <div class="list-group list-group-horizontal">
+                <a class="list-group-item" href="{{  path('intex_org_company_users',{ 'companyId': company.id })}}">{% trans %}Show company users{% endtrans %}</a>
+                <a class="list-group-item" href="{{  path('intex_org_user_new',{ 'companyId': company.id })}}">{% trans %}Add user in company{% endtrans %}</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Users & organizations{% endblock %}</title>
+        {% block stylesheets %}
+            {% stylesheets
+                '@IntexOrgBundle/Resources/public/css/*'
+                '@IntexOrgBundle/Resources/public/css/font-awesome/css/font-awesome.min.css'
+                output='css/orgusers.css'
+                filter='yui_css'
+            %}
+            <link href="{{ asset_url }}" rel="stylesheet" media="screen" />
+            {% endstylesheets %}
+            <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+        {% endblock %}
+        {% block firstjavascripts %}
+        {% endblock %}
+    </head>
+    <body>
+        <section id="wrapper">
+            <header id="header">
+                <div class="language">
+                    {% block languages %}
+                        <span><a href="{{ path('intex_org_homepage', {'_locale': 'ru' }) }}">RU</a></span>&nbsp|
+                        <span><a href="{{ path('intex_org_homepage', {'_locale': 'en' }) }}">EN</a></span>
+                    {% endblock %}
+                </div>
+                <hgroup>
+                    <h2>{% block site_title %}<a href="{{ path('intex_org_homepage') }}">{% trans %}Users & Organizations {% endtrans %}</a>{% endblock %}</h2>
+                </hgroup>
+            </header>
+
+            <section class="main-col">
+                {% block namepage %}{% endblock %}
+                {% block body %}{% endblock %}
+            </section>
+
+            {% block sidebar %}
+            {% endblock %}
+
+            <div id="footer">
+                {% block footer %}
+                {% endblock %}
+            </div>
+        </section>
+
+        {% block javascripts %}
+            {% javascripts
+                '@IntexOrgBundle/Resources/public/js/*'
+                '@IntexOrgBundle/Resources/public/js/check-file-size.js'
+            %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
+    </body>
+</html>

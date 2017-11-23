@@ -1,0 +1,138 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+@font-face {
+        font-family: 'Glyphicons Halflings';
+        src: url('/fonts/glyphicons-halflings-regular.eot');
+}
+
+body { line-height: 1;font-family: Arial, sans-serif;font-size: 12px; width: 100%; height: 100%; color: #000; font-size: 14px; }
+.clear { clear: both; }
+
+#wrapper { margin: 0 auto; width: 1000px; border: 1px solid #ccc;}
+#wrapper a { text-decoration: none; color: #F48A00; }
+#wrapper span.highlight { color: #F48A00; }
+
+#header { border-bottom: 1px solid #ccc; margin-bottom: 20px; }
+#header .top { border-bottom: 1px solid #ccc; margin-bottom: 10px; }
+#header ul.navigation { list-style: none; text-align: right; }
+#header .navigation li { display: inline }
+#header .navigation li a { display: inline-block; padding: 10px 15px; border-left: 1px solid #ccc; }
+#header h2 { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 42px; text-align: center; line-height: 70px; position: relative; top: -10px;}
+#header h2 a { color: #4b7492; }
+#header h3 { text-align: center; font-family: 'La Belle Aurore', cursive; font-size: 32px; margin-bottom: 20px; font-weight: normal; color: #000000; }
+h3{font-size: 24px;}
+.main-col { width: 75%; display: inline-block; float: left; padding: 20px; margin-bottom: 20px; }
+.sidebar { width: 25%; ; display: inline-block; border-left: 1px solid #ccc;}
+
+.main-col a { color: #F48A00; }
+.main-col h1,
+.main-col h2
+{ line-height: 1.2em; font-size: 32px; margin-bottom: 10px; font-weight: normal; color: #F48A00; }
+.main-col p { line-height: 1.5em; margin-bottom: 20px; }
+
+#footer { border-top: 1px solid #ccc; clear: both; text-align: center; padding: 10px; color: #aaa; }
+
+.users .row{
+    background: transparent;
+    padding: 2px 0;
+}
+.users .row :nth-child(even){
+    background-color: #dcdcdc;
+    padding: 2px;
+}
+.users .row :nth-child(even) a{
+    background-color: #dcdcdc;
+
+}
+.users .row :nth-child(odd){
+    background-color: #aaaaaa;
+    padding: 2px;
+}
+#header{
+    height: 220px;
+    background: url("../images/org-header.jpg")  no-repeat;
+    background-size: 100% 100%;
+}
+.table.table-striped.table-hover tr{
+}
+.table{
+    border: 1px solid #ccc;
+}
+.table th{
+    background-color: #dde4e7;
+    cursor: default;
+}
+.table-striped > tbody > tr:nth-of-type(2n+1){
+    background-color: #f3e6ac;
+}
+.table-hover>tbody>tr:hover{background-color:#dfc551}
+.name-col{
+    background-color: #fcf6da;
+}
+.sidebar li{
+    border-bottom: 1px solid #ccc;
+    margin: 0 10px;
+}
+.nav-stacked > li + li{
+    margin-left: 10px;
+    margin-top: 0;
+}
+.sidebar li:last-child{
+    border-bottom: 0;
+}
+.nav{
+    font-weight: bolder;
+}
+.main-col h3{
+    margin-bottom: 20px;
+}
+.alert{
+    margin-top: 20px;
+}
+.list-group{
+    height: 90%;
+    line-height: 90%;
+    text-align: center;
+}
+.list-group-horizontal .list-group-item {
+    display: inline-block;
+}
+.list-group-horizontal .list-group-item {
+    margin-bottom: 0;
+    margin-left:-4px;
+    margin-right: 0;
+}
+.list-group-horizontal .list-group-item:first-child {
+    border-top-right-radius:0;
+    border-bottom-left-radius:4px;
+}
+.list-group-horizontal .list-group-item:last-child {
+    border-top-right-radius:4px;
+    border-bottom-left-radius:0;
+}
+.control-label{
+    float: left;
+    padding: 5px ;
+}
+.userform{
+    margin: 0 20%;
+    width: 60%;
+}
+.userform .btn{
+    width: 100%;
+}
+a.thumbnail{
+    text-align: center;
+    padding-top: 15%;
+}
+.language{
+    position: relative;
+    top: 5px;
+    padding-left: 930px;
+    color: #ffffff !important;
+    z-index: 100;
+}
+.language a{
+    color: #ffffff !important;
+    font-weight: bold;
+}
